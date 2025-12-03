@@ -171,6 +171,21 @@ body {
   color: blue;
 }
 
+footer {
+  padding: 1rem;
+  background-color: #111;
+  font-size: 0.9rem;
+
+  /* make it stick to the bottom of the page always no matter where you scroll*/
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: white;
+}
+
 /* Fade-in animation */
 @keyframes fadeIn {
   from {
