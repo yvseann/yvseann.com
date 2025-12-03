@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap');
+
+:root {
+  --primary: #0066ff;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Ill figure out how to fix scale when I get home...*/
+#topsection {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+
+  background-image: url('./images/head1.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transform: translateZ(0);
+}
+
+#topsection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center,
+      /* center of element */
+      rgba(0, 0, 0, 0) 0%,
+      /* visible in the middle */
+      rgba(0, 0, 0, 0.5) 100%
+      /* fades to transparent at edges */
+    );
+}
+
+
+#topsection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlayContent {
+  user-select: none;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  max-width: 600px;
+  color: white;
+  text-align: left;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.overlayContent h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  margin-bottom: 1rem;
+}
+
+.overlayContent p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  color: rgb(200, 200, 200);
+  margin-bottom: 1.5rem;
+}
+
+#buttonBlock {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#buttonBlock a {
+  display: inline-block; /* anchors need this to behave like buttons */
+  text-decoration: none; /* remove underline */
+  padding: clamp(0.5rem, 1vw, 0.8rem) clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Profile button */
+#showProfile {
+  background-color: transparent;
+  border: 1px solid var(--primary, blue);
+  box-shadow: 0 0 8px rgba(0, 51, 255, 0.7);
+  color: var(--primary, blue);
+}
+
+#showProfile:hover {
+  background-color: rgba(126, 126, 138, 0.8);
+  border: 1px solid white;
+  box-shadow: 0px 0px 8px rgb(127, 127, 129);
+  color: var(--primary, blue);
+}
+
+/* Know more button */
+#knowMore {
+  background-color: var(--primary, blue);
+  border: 1px solid rgb(5, 30, 131);
+  box-shadow: 0px 0px 8px var(--primary, blue);
+  color: white;
+}
+
+#knowMore:hover {
+  background-color: rgba(50, 50, 50, 0.5);
+  border: 1px solid white;
+  box-shadow: 0px 0px 8px rgb(235, 235, 235);
+  color: grey;
+}
+
+#buttonBlock #showProfile:hover,
+#knowMore:hover {
+  transform: scale(1.05);
+  transition: all 0.5s;
+}
+
+#buttonOptions div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#buttonOptions div img {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.2em;
+  color: #FF0000;
+}
+
+#buttonOptions div button {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 95%;
+  background-color: grey; /* I'll just make it grey for now since I don't have a good colour for it at the moment */
+  border-color: grey;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 0.5vh;
+}
+
+#buttonOptions div button:hover{
+  transform: scale(1.02);
+  transition: all 0.2s ease;
+}
+
+#buttonOptions div button:active {
+  color: blue;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+/*Let those stinky mobile users enjoy a decent UI.*/
+
+@media only screen and (max-width: 450px) {
+
+  body::before {
+    content: "mobile resolution active.";
+    display: block;
+    background: #222;
+    color: red;
+    text-align: center;
+    padding: 0.1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+
+  /* if i feel evil for no reason:
+  * {
+    margin: 5px;
+    padding: 5px;
+  }
+  */
+
+  #topsection {
+    background-attachment: scroll;
+  }
+
+  .overlayContent {
+    position: static;
+    margin: 3.5rem auto 0;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+  }
+
+  .overlayContent p {
+    font-size: clamp(0.85rem, 1.8vw, 1.15rem);
+    line-height: 1.6;
+    color: rgb(200, 200, 200);
+    margin-bottom: 1.5rem;
+  }
+
+  #buttonBlock {
+    /* How on earth do I center them...*/
+
+    justify-content: center;
+    align-items: center;
+
+    /* Found out how to center them! */
+
+  }
+
+  /* No idea if this is a good idea or not, if its not they're just gonna have to deal with it */
+  h2, h3, h6, p {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+}
