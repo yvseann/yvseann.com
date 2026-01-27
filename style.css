@@ -1,67 +1,30 @@
 * {
-    padding: 0px;
     margin: 0px;
+    padding: 0px;
 }
 
-/* Sidebar menu*/
-
-.sidenav {
-    height: 100%;
-    width: 75px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 20px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
-.sidenav:hover {
-    width: 160px;
-}
-
-.sidenav a{
+.hero {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    padding: 4vh;
+    width: 100vw;
 
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    text-align: left;
+    background-image: url(images/head1.png);
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+
 }
 
-.sidenav a span {
-    opacity: 0;
-    width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    transition: opacity 0.3s ease, width 0.3s ease;
-}
-
-.sidenav:hover a span { opacity: 1; width: auto; }
-
-.sidenav a img {
-    height: 40px;
-    width: auto;
-    filter: invert(1);
-}
-
-.sidenav a:hover{
-    color:#f1f1f1;
-}
-.main {
+.hero h1 {
     color: white;
-
-    display: block;
-    margin-left: 75px;
-    background-color: rgb(50,50,50);
-    height: 100vh;
+    font-size: 4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@media screen and (max-height:450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a{font-size:18px;}
-}
