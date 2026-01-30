@@ -63,7 +63,21 @@ body {
 }
 
 .main {
-    margin-top: 40vh;
+    /* something */
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.about-me {
+    display: flex;
+    float: right;
+}
+
+.softwares {
+    display: flex;
+    float: right;
 }
 
 @media (max-width: 400px) {
