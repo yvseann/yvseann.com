@@ -23,6 +23,8 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background-color: rgb(30, 30, 30);
     color: #eee;
     line-height: 1.6;
@@ -52,12 +54,14 @@ body::-webkit-scrollbar {
     font-size: 4rem;
     font-family: 'Avenir', sans-serif;
     font-weight: 700;
+    text-align: center;
 }
 
 .hero h5 {
     margin-top: 5rem;
     font-family: 'Avenir', sans-serif;
     font-weight: 400;
+    text-align: center;
 }
 
 .main {
@@ -76,6 +80,24 @@ body::-webkit-scrollbar {
 .softwares {
     display: flex;
     float: right;
+}
+
+.softwares img {
+    height: 5vw;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
 }
 
 @media (max-width: 400px) {
