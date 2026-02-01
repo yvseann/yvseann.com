@@ -3,11 +3,33 @@
     padding: 0px;
 }
 
+@font-face {
+    font-family: 'Avenir';
+    src: url('fonts/Avenir-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('fonts/Avenir-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
 body {
-    font-family: Arial, sans-serif;
     background-color: rgb(30, 30, 30);
     color: #eee;
     line-height: 1.6;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .hero {
@@ -28,11 +50,14 @@ body {
     position: absolute;
     color: white;
     font-size: 4rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Avenir', sans-serif;
+    font-weight: 700;
 }
 
 .hero h5 {
     margin-top: 5rem;
+    font-family: 'Avenir', sans-serif;
+    font-weight: 400;
 }
 
 .main {
