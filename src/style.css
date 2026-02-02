@@ -35,6 +35,8 @@ body::-webkit-scrollbar {
 }
 
 .hero {
+    user-select: none;
+    -moz-user-select: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,30 +76,156 @@ body::-webkit-scrollbar {
 
 .about-me {
     display: flex;
-    float: right;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+.about-me h1 {
+    margin: 0;
+}
+
+.banners {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.banners h1 {
+    margin: 0;
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.banners h1:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.35),
+        inset 0 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+
+
+
+.about-me h1 {
+    text-align: right;
+}
+
+.banners {
+    display: flex;
+    font-size: 0.75rem;
+}
+
+.banners h1 {
+    padding: 1vh;
+}
+
+/* Container that aligns everything to the right */
+.softwares-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 4vh;
+}
+
+/* Title styling */
+.softwares-section h2 {
+    margin: 0 0 1vh 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    opacity: 0.85;
+    text-transform: uppercase;
 }
 
 .softwares {
     display: flex;
-    float: right;
+    gap: 2rem;
+    padding: 2vh 2vw;
+
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.35),
+        inset 0 1px 2px rgba(255, 255, 255, 0.15);
+
+    margin-left: auto;
 }
 
 .softwares img {
     height: 4vh;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+    transition: transform 0.25s ease, filter 0.25s ease;
 }
 
+.softwares img:hover {
+    transform: translateY(-4px) scale(1.12);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.55));
+}
+
+
 .footer {
+    width: calc(100% - 20vw); /* matches your main left/right margins */
+    margin: 6vh auto 3vh auto;
+
+    padding: 1.2rem 1.6rem;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: auto;
-    color: white;
+
+    /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25),
+        inset 0 1px 2px rgba(255, 255, 255, 0.1);
+
+    font-size: 0.9rem;
+    color: #eee;
+}
+
+.footer p {
+    margin: 0;
+    opacity: 0.85;
 }
 
 .footer a {
     text-decoration: none;
-    color: white;
+    color: #eee;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
 }
+
+.footer a:hover {
+    opacity: 1;
+}
+
 
 @media (max-width: 400px) {
 
@@ -106,7 +234,6 @@ body::-webkit-scrollbar {
         position: relative;
         display: flex;
         flex-direction: column;
-        /* stack text above buttons */
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -114,7 +241,6 @@ body::-webkit-scrollbar {
 
     .buttons {
         position: static;
-        /* remove absolute positioning */
         margin-top: 2vh;
         justify-content: center;
     }
@@ -125,7 +251,6 @@ body::-webkit-scrollbar {
 
     .hero h1 {
         font-size: 2.5rem;
-        /* optional: fits better on mobile */
         text-align: center;
     }
 }
