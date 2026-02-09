@@ -4,61 +4,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YVSEANN</title>
+  <title>yvseann</title>
   <link rel="stylesheet" href="src/style.css">
-
-  <meta property="og:title" content="YVSEANN">
-  <meta property="og:description"
-    content="Portfolio stuff im not gonna go in too much depth because if I keep using my keyboard my cat will pounce on me.">
-  <meta property="og:image" content="https://yvseann.com/src/images/head1.png">
-  <meta property="og:url" content="https://yvseann.com">
-  <meta property="og:type" content="website">
-
-  <meta property="og:site_name" content="yvseann">
-
-  <!-- Twitter card should describe the *type* of card, not the image URL -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://yvseann.com/src/images/head1.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.fog.min.js"></script>
 
 
 </head>
 
 <body>
-  <div class="hero">
-    <h1>PORTFOLIO</h1>
-    <h5>YVSEANN ------------------------------------------- 2026</h5>
 
-  </div>
-
-  <div class="main">
-    <div class="about-me">
-
-      <h1>YVSEANN</h1>
-      <div class="banners">
-        <h1>Programmer</h1>
-        <h1>3D Modeller</h1>
-      </div>
+  <header>
+    <div class="left">
+      <img src="src/images/placeholder.png">
     </div>
 
-    <div class="softwares-section">
-      <h2>Softwares</h2>
-
-      <div class="softwares">
-        <a href="https://blender.org"><img src="src/images/softwares/Blender.png" alt="blender"></a>
-        <a href="https://gimp.org"><img src="src/images/softwares/Gimp.svg" alt="gimp"></a>
-        <a href="https://create.roblox.com"><img src="src/images/softwares/Studio.png" alt="roblox studio"></a>
-        <a href="https://unrealengine.com"><img src="src/images/softwares/Unreal.png" alt="unreal"></a>
-        <a href="https://unity.com"><img src="src/images/softwares/Unity.png" alt="unity"></a>
-        <a href="code.visualstudio.com"><img src="src/images//softwares/vscode.png" alt="Visual Studio Code"></a>
-      </div>
+    <div class="middle">
+      <a href="index.html">Home</a>
+      <a href="src/about.html">About Me</a>
+      <a href="src/projects.html">My Projects</a>
+      <a href="src/skills.html">Skills & Tools</a>
     </div>
-  </div>
 
-  <div class="footer">
-    <p>© 2026 YVSEANN. All rights reserved.</p>
-    <a href="#top">Goto Top</a>
-    <a href="LICENSE">LICENCE</a>
-  </div>
+    <div class="right">
+      <a href="Contact Me">Contact Me</a>
+    </div>
+  </header>
+
+  <div id="hero"></div>
+
+
+    <script>
+    VANTA.FOG({
+      el: "#hero",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      highlightColor: 0xffb3,
+      midtoneColor: 0x59ff,
+      lowlightColor: 0x2907d7,
+      baseColor: 0xffffff,
+      blurFactor: 0.18,
+      speed: 0.00,
+      zoom: 0.50
+    })
+  </script>
+
+
 </body>
 
 </html>
